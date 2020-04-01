@@ -35,13 +35,6 @@ $(document).ready(function () {
   });
 });
 
-/* Bouncing Down Arrow */
-$(document).ready(function () {
-  $(window).scroll(function () {
-    $('.arrow').css('opacity', 1 - $(window).scrollTop / 250);
-  });
-});
-
 /* Meet the Team */
 $(document).ready(function () {
   $('#team-slider').owlCarousel({

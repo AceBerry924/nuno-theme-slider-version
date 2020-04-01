@@ -51,20 +51,36 @@ body {
   transition: background-color 1s ease 0s;
 }
 
-/* Landing page */
-
-.home-inner {
-  background-image: url('../img/background.png');
+/* Image Slider */
+.carousel-item {
+  height: 100vh; /*--- Change Height of Image Slider --*/
+  min-height: 18.75rem; /*--- (300px for mobile) --*/
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-color: #1A1A1A; /*--- For Firefox white between slides --*/
 }
-.caption {
-  width: 100%;
+/*---Change Carousel Transition Speed --*/
+.carousel-item-next, .carousel-item-prev, .carousel-item.active {
+  display: block;
+  transition: -webkit-transform 1.2s ease;
+  transition: transform 1.2s ease;
+  transition: transform 1.2s ease,-webkit-transform 1.2s ease;
+}
+.carousel-caption {
+  min-width: 100%;
   max-width: 100%;
   position: absolute;
   top: 38%;
   z-index: 1;
+  right: 0;
+  left: 0;
+  padding: 0;
 }
-.caption h1 {
-  color: #fff;
+.carousel-item h1 {
+  color: white;
   font-size: 4.5rem;
   text-transform: uppercase;
   font-weight: 700;
@@ -72,8 +88,8 @@ body {
   text-shadow: .1rem .1rem .8rem black;
   padding-bottom: 1rem;
 }
-.caption h3 {
-  color: #fff;
+.carousel-item h3 {
+  color: white;
   font-size: 2.5rem;
   text-transform: uppercase;
   font-weight: 400;
@@ -401,12 +417,12 @@ a.top-scroll:hover {
 
 /* Devices Under 992px (lg) */
 @media (max-width: 991px) {
-  .caption h1 {
+  .carousel-item.active h1 {
     font-size: 3.5rem;
     letter-spacing: .2rem;
     padding-bottom: .8rem;
   }
-  .caption h3 {
+  .carousel-item.active h3 {
     font-size: 2.2rem;
     padding-bottom: 1.7rem;
   }
@@ -421,12 +437,12 @@ a.top-scroll:hover {
 
 /* Devices Under 768px (lg) */
 @media (max-width: 767px) {
-  .caption h1 {
+  .carousel-item.active h1 {
     font-size: 2.7rem;
     letter-spacing: .15rem;
     padding-bottom: .5rem;
   }
-  .caption h3 {
+  .carousel-item.active h3 {
     font-size: 1.7rem;
     padding-bottom: 1.2rem;
   }
@@ -457,12 +473,12 @@ a.top-scroll:hover {
 
 /* Devices Under 576px (lg) */
 @media (max-width: 575) {
-  .caption h1 {
+  .carousel-item.active h1 {
     font-size: 1.9rem;
     letter-spacing: .1rem;
     padding-bottom: .4rem;
   }
-  .caption h3 {
+  .carousel-item.active h3 {
     font-size: 1.2rem;
     padding-bottom: 1rem;
   }
